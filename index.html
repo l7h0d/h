@@ -24,14 +24,30 @@
     #svgbx{
       display: none !important;
     }
+
+    #uhuih{
+      position:fixed;
+      width:100vw;
+      height:100vh;
+      background:hsl(0, 0%, 95%);
+      /* background:black; */
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 
 
   <script src="/jquery.min.js"></script>
   <script src="/kendo.all.min.js"></script>
 </head>
-<div id="qrsvg" style="display:none;"></div>
 <body>
+  <div id="qrsvg" style="display:none;"></div>
+  <div id="uhuih">
+    <input id="pass" type="password" style="width:50vw;" placeholder="Enter Password" required>
+  </div>
   <h1>GST</h1>
 
 
@@ -198,6 +214,11 @@
 
   <script id="qrcode">
 
+    pass.oninput=()=>{
+      if (pass.value=='SonuGst') {
+        uhuih.style.display='none';
+      }
+    }
     textarea.oninput=()=>{
       
       
