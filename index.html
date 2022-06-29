@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GST</title>
+  <title>Docs Generator</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:arial;list-style:none;text-decoration:none;outline:0;border:none;scroll-behavior:smooth;
       -webkit-tap-highlight-color:transparent;user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none
     }
 
-    body{background:hsl(0, 0%, 95%);padding:30px calc(30vw - 100px)}
+    body{background:hsl(0, 0%, 95%);}
     h1{font-size:30px;margin-bottom:30px;text-align:center;}
     button{width:100%;height:50px;font-size:20px;padding:10px;border-radius:5px;background:black;font-weight: bold;cursor: pointer;color:white;}
     button:hover{background:hsl(0, 0%, 20%)}
@@ -18,6 +18,31 @@
       display: none !important;
     }
 
+
+    #hedr,#fotr,#lshed{display:flex;height:50px;background:white;align-items:center;justify-content: space-between;padding:5px 30px;}
+
+    #logo{
+      font-family: Georgia;font-size: 22px;color:black;font-weight:bold;;
+    }
+
+    nav{
+      height:100%;
+      display: flex;
+      align-items: center;
+    }
+    nav a{
+      height: 100%;
+      margin:0 10px;
+      padding:0 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    svg{height:100%;}
+
+    main{
+      padding:30px calc(30vw - 100px)
+    }
     #uhuih{
       position:fixed;
       width:100vw;
@@ -25,26 +50,92 @@
       background:hsl(0, 0%, 95%);
       top: 0;
       left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      /* display: none; */
     }
   </style>
 
-
-  <script src="jquery.min.js"></script>
-  <script src="kendo.all.min.js"></script>
-  <script src="pdfkit.js"></script>
-  <script src="blobstream.js"></script>
-  <script src="source.js"></script>
 </head>
 <body>
   <div id="qrsvg" style="display:none;"></div>
   <div id="uhuih">
-    <input id="pass" type="password" style="width:50vw;" placeholder="Enter Password" required>
+    <div id="lshed" style="justify-content:center"><a href='/' id='logo'>Docs Generator</a></div>
+    <div id="lobox" style="display: flex;align-items: center;justify-content: center;flex-direction: column;padding:50px;">
+      <h2 style="font-size:18px;margin-bottom:20px;">Login</h2>
+      <form id="loform" style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <input id="loema" type="email" style="width:50vw;" placeholder="Enter Email" required>
+        <input id="lopass" type="password" style="width:50vw;" placeholder="Enter Password" required>
+        <button id='lobtn' style="margin-bottom: 20px;">Login</button>
+        <button id='losibtn' style="margin-bottom: 20px;">Sign Up</button>
+      </form>
+    </div>
+    <div id="sibox" style="display:none;align-items: center;justify-content: center;flex-direction: column;padding:50px;">
+      <h2 style="font-size:18px;margin-bottom:20px;">Sign Up</h2>
+      <form id="siform" style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+        <input id="sinam" type="text" style="width:50vw;" placeholder="Enter Name" required>
+        <input id="siema" type="email" style="width:50vw;" placeholder="Enter Email" required>
+        <input id="sipass" type="password" style="width:50vw;" placeholder="Enter Password" required>
+        <button id='sibtn' style="margin-bottom: 20px;">Sign Up</button>
+        <button id='silobtn' style="margin-bottom: 20px;">Login</button>
+      </form>
+    </div>
   </div>
-  <h1>GST</h1>
+  <header id='hedr'>
+    <a href='/' id='logo'>Docs Generator</a>
+    <nav id='nav'>
+      <a id="trial" >1 Day Trial</a>
+      <a id="bypln" href="/pricing">Buy Plan</a>
+      <a>
+        <p id="avnam">Sonu</p>
+        <p id="logout" style="color:red;margin:0 10px;">Logout</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none"><path d="M0 0h24v24H0z"/><path d="M0 0h24v24H0z"/></g><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88a9.947 9.947 0 0 1 12.28 0C16.43 19.18 14.03 20 12 20z"/></svg></a>
+    </nav>
+  </header>
+    <script>
+    losibtn.onclick=()=>{
+      sibox.style.display='flex';
+      lobox.style.display='none';
+    }
+    silobtn.onclick=()=>{
+      lobox.style.display='flex';
+      sibox.style.display='none';
+    }
+    logout.onclick=()=>{
+      localStorage.removeItem('oydfg');
+      localStorage.removeItem('ndsgf');
+      location.reload()
+    }
+    loform.oninput=()=>{
+      if (loema.value==atob('YXJ5YW5zb251Z0BnbWFpbC5jb20=')&&lopass.value==atob('U29udUdzdA==')) {
+        uhuih.style.display='none';
+        // bypln.style.display='none';
+        trial.style.display='none';
+        localStorage.oydfg='oydfg'
+      }else if(loema.value==atob(localStorage.email)&&lopass.value==atob(localStorage.pass)){
+        uhuih.style.display='none';
+        localStorage.ndsgf='ndsgf';
+      }
+    }
+    if (localStorage.oydfg) {
+      uhuih.style.display='none';
+      // bypln.style.display='none';
+      trial.style.display='none';
+    }
+    siform.onsubmit=(e)=>{
+      e.preventDefault()
+      localStorage.name=btoa(sinam.value);
+      localStorage.email=btoa(siema.value);
+      localStorage.pass=btoa(sipass.value);
+      localStorage.ndsgf='ndsgf';
+      uhuih.style.display='none';
+      avnam.innerText=atob(localStorage.name).split(' ')[0]
+    }
+    if (localStorage.ndsgf) {
+      uhuih.style.display='none';
+      avnam.innerText=atob(localStorage.name).split(' ')[0]
+    }
+  </script>
 
+  <main>
 
   <textarea id="textarea" placeholder="ALl Data" style="min-height:100px;"></textarea>
   <form id="form">
@@ -221,16 +312,18 @@
   
       
   </div>
+</main>
+  <footer id='fotr' style="justify-content:center;">Docs Generator © <script>document.write((new Date).getFullYear())</script> • All Rights Reserved.</div></footer>
 
-
+  <script src="jquery.min.js"></script>
+  <script src="kendo.all.min.js"></script>
+  <script src="pdfkit.js"></script>
+  <script src="blobstream.js"></script>
+  <script src="source.js"></script>
   <script id="qrcode">
 
 
-    pass.oninput=()=>{
-      if (pass.value=='SonuGst') {
-        uhuih.style.display='none';
-      }
-    }
+
     textarea.oninput=()=>{
       
       
