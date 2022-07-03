@@ -1,0 +1,4 @@
+permalink: "/:title/"
+paginate: 30
+plugins: 
+- jekyll-paginate

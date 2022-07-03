@@ -1,0 +1,42 @@
+
+
+*,::before,::after{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;list-style:none;text-decoration:none;outline:0;border:none;scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;-webkit-user-select:none!important;-ms-user-select:none!important;user-select:none!important;}
+
+a{cursor:pointer;}
+
+  body{background:hsl(0, 0%, 95%);}
+  h1{font-size:30px;margin-bottom:30px;text-align:center;}
+  button{width:100%;height:50px;font-size:20px;padding:10px;border-radius:5px;background:black;font-weight: bold;cursor: pointer;color:white;}
+  button:hover{background:hsl(0, 0%, 20%)}
+  input,textarea{width:100%;height:40px; font-size:20px;padding:20px;border-radius:5px;resize: vertical;border:2px solid hsl(0, 0%, 20%);margin-bottom:20px;}
+
+  #svgbx{
+    /* display: none !important; */
+  }
+
+
+  #hedr,#fotr,#lshed{display:flex;height:50px;background:white;align-items:center;justify-content: space-between;padding:5px 30px;}
+
+  #logo{
+    font-family: Georgia;font-size: 22px;color:black;font-weight:bold;;
+  }
+
+  nav{
+    height:100%;
+    display: flex;
+    align-items: center;
+  }
+  nav a{
+    height: 100%;
+    margin:0 10px;
+    padding:0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  svg{height:100%;}
+
+  main{
+    padding:30px calc(30vw - 100px);
+    min-height:calc(100vh - 100px);
+  }

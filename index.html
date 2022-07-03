@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<style>
+  #ujwn{
+    /* display:grid; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center;
+    align-items: center;
+    grid-gap:20px; */
+    display:grid;grid-gap:25px;grid-template-columns:repeat(auto-fit,minmax(200px,200px));
+    justify-content: center;
+  }
+  #ujwn a{
+    width:200px;
+    height:200px;
+    background:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:10px;
+    font-size:25px;
+    font-weight:bold;
+    color:black;
+    border:2px solid black;
+    /* margin:20px; */
+  }
+  #ujwn a:hover{
+    color: dodgerblue;
+    border:2px solid dodgerblue;
+  }
+</style>
+
+<div id="ujwn">
+  {% for post in site.posts %}
+  <a href="{{post.url}}">{{post.title}}</a>
+  {% endfor %}
+</div>

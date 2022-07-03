@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<style>
+  nav{
+    display:none;
+  }
+  #hedr{
+    justify-content: center;
+  }
+</style>
+
+  <div id="uhuih">
+    <div id="lobox" style="padding:50px;text-align: center;">
+      <h2 style="font-size:25px;margin-bottom:25px;">Login</h2>
+      <form id="loform">
+        <input id="loema" type="email" placeholder="Enter Email" required>
+        <input id="lopass" type="password" placeholder="Enter Password" required>
+        <button id='lobtn' style="margin-bottom: 20px;">Submit</button>
+      </form>
+      <button id='losibtn' style="margin-bottom: 20px;">Sign Up</button>
+    </div>
+    <div id="sibox" style="padding:50px;text-align: center;display: none;">
+      <h2 style="font-size:25px;margin-bottom:25px;">Sign Up</h2>
+      <form id="siform">
+        <input id="sinam" type="text" placeholder="Enter Name" required>
+        <input id="siema" type="email" placeholder="Enter Email" required>
+        <input id="sipass" type="password" placeholder="Enter Password" required>
+        <button id='sibtn' style="margin-bottom: 20px;">Submit</button>
+      </form>
+      <button id='silobtn' style="margin-bottom: 20px;">Login</button>
+    </div>
+  </div>
+  <script>
+  losibtn.onclick=()=>{
+    sibox.style.display='';
+    lobox.style.display='none';
+  }
+  silobtn.onclick=()=>{
+    lobox.style.display='';
+    sibox.style.display='none';
+  }
+  loform.onsubmit=(e)=>{
+    e.preventDefault()
+    if (loema.value==atob('YXJ5YW5zb251Z0BnbWFpbC5jb20=')){
+      localStorage.dfew='dfew';
+    }
+    if ((loema.value==atob('YXJ5YW5zb251Z0BnbWFpbC5jb20=')||atob(localStorage.email))&&(lopass.value==atob('U29udURvY3M=')||atob(localStorage.pass))) {
+      localStorage.oydfg='oydfg'
+      location.href='/';
+    }
+  }
+  siform.onsubmit=(e)=>{
+    e.preventDefault()
+    localStorage.name=btoa(sinam.value);
+    localStorage.email=btoa(siema.value);
+    localStorage.pass=btoa(sipass.value);
+    localStorage.oydfg='oydfg'
+    location.href='/';
+  }
+  </script>
