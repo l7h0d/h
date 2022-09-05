@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html id='html' lang="en">
-<script>if (!localStorage.oydfg&&'/login/'!=='{{page.url}}'){location.href='/login'}</script>
+<script>if (!localStorage.oydfg&&'/login'!=='{{page.url}}'){location.href='/login'}</script>
 <head>
 <meta charset="UTF-8">
-<title>{% if  page.title %}{{page.title}} • {% endif %} Docs Generator</title>
+<title>{% if  page.title %}{{page.title}} • {% endif %} Docs Maker</title>
 <meta content='' name='description'/>
 <meta content='' name='keywords'/>
 <link href='/favicon.ico' rel='icon' sizes='any'/>
@@ -20,12 +20,13 @@
 {% endfor %}
 </head>
 <body id='body'>
-  <div id="qrsvg" style="display:none;"></div>
+  <div id="loading"></div>
+  
 
   
 
   <header id='hedr'>
-    <a href='/' id='logo'>Docs Generator</a>
+    <a href='/' id='logo'>Docs Maker</a>
     <nav id='nav'>
       <a>
         <p id="avnam"></p>
@@ -52,7 +53,7 @@
 
   if (localStorage.dfew){
     avnam.innerText='Sonu';
-  }else{
+  }else if(localStorage.name){
     avnam.innerText=atob(localStorage.name).split(' ')[0]
   }
 </script>

@@ -8,7 +8,11 @@ layout: default
 
 <script>
     form.onsubmit=(e)=>{
-e.preventDefault()
+      loading.style.display='grid';
+e.preventDefault();
+setTimeout(() => {
+  
+
 let doc = new PDFDocument({compress:true,size: "A4"});
 let svgs = document.querySelectorAll('#svgbx svg');
 svgs.forEach((e,l)=>{
@@ -27,8 +31,10 @@ link.href = stream.toBlobURL('application/pdf');
 link.download = "{{page.title}}.pdf";
 link.click();
 }
+
 });
 doc.end();
-
+loading.style.display='none'
+}, 0);
 }
 </script>
