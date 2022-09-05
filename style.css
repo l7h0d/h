@@ -40,7 +40,7 @@ a{cursor:pointer;}
   }
 
   #svgbx{
-    /* display: none !important; */
+    display: none !important;
   }
 
 
