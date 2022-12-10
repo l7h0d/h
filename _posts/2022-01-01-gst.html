@@ -192,23 +192,17 @@ js: [jquery.min.js,kendo.all.min.js,pdfkit.js,blobstream.js,source.js]
     textarea.oninput=()=>{
       gstnoi.value=textarea.value.split(/ : |\n/g).filter(Boolean)[textarea.value.split(/ : |\n/g).filter(Boolean).indexOf("Search Result based on GSTIN/UIN")+1]
       namei.value=textarea.value.split(/\n/g).filter(Boolean)[textarea.value.split(/\n/g).filter(Boolean).indexOf("Legal Name of Business")+1]
-
       tradei.value=textarea.value.split(/\n/g).filter(Boolean)[textarea.value.split(/\n/g).filter(Boolean).indexOf("Trade Name")+1]
-
       datei.value=textarea.value.split(/\n/g).filter(Boolean)[textarea.value.split(/\n/g).filter(Boolean).indexOf("Effective Date of registration")+1]
       addri.value=textarea.value.split(/\n/g).filter(Boolean)[textarea.value.split(/\n/g).filter(Boolean).indexOf("Principal Place of Business")+1]
-
-
       textarea.value.split(/\n/g).filter(Boolean).forEach(e=>{if(e.includes('Ward')){wardi.value=e.replace('Ward - ','')}})
+      if (textarea.value=='') {form.reset()}
 
-      uyhjio()
-      if (textarea.value=='') {
-        form.reset()
-      }
+      // vcuy()
     }
 
-    form.oninput=()=>uyhjio()
-    function uyhjio(){
+    // form.oninput=()=>vcuy()
+    function vcuy(){
       gstno.innerHTML=gstnoi.value;
       gstno2.innerHTML=gstnoi.value;
       lname.innerHTML=namei.value;

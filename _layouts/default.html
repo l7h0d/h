@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html id='html' lang="en">
-<script>if (!localStorage.stuyok&&'/login'!=='{{page.url}}'){location.href='/login'}</script>
+<script>if (!localStorage.oydfg&&'/login'!=='{{page.url}}'){location.href='/login'}</script>
 <head>
 <meta charset="UTF-8">
 <title>{% if  page.title %}{{page.title}} • {% endif %} Docs Maker</title>
@@ -24,7 +24,7 @@
   
 
   
-
+ 
   <header id='hedr'>
     <a href='/' id='logo'>Docs Maker</a>
     <nav id='nav'>
@@ -46,7 +46,7 @@
 
 
   logout.onclick=()=>{
-    localStorage.removeItem('stuyok');
+    localStorage.removeItem('oydfg');
     localStorage.removeItem('dfew');
     location.href='/login';
   }
